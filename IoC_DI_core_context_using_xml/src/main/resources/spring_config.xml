@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="b1" class="dao.BuyV1" primary="true">
+     <qualifier value="b1q">
+
+     </qualifier>
+    </bean>
+    <bean id="b2" class="dao.BuyV2">
+        <qualifier value="b2q">
+
+        </qualifier>
+    </bean>
+
+    <bean id="metier" class="metier.Transaction">
+        <property name="buying" ref="b1">
+
+        </property>
+    </bean>
+
+</beans>
